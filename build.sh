@@ -17,7 +17,7 @@
 SRC=$(realpath $(cd -P "$(dirname "${BASH_SOURCE[0]}")" && pwd))
 
 ATTEMPTS=10
-BASE=/home/user/src
+BASE=$HOME/src
 JOBS=$((`nproc` + 2))
 TTL=86400
 UPDATE=0
@@ -61,7 +61,7 @@ echo "UPDATE:   $UPDATE"
 echo "VERSION:  $VERSION"
 
 mkdir -p $SRC/out
-TMPDIR=$(mktemp -d -p /tmp content-shell-$VERSION.XXXXX)
+TMPDIR=$(mktemp -d -p /tmp content-shell-$VERSION.XXXXX 2&>/dev/null || mktemp -d /tmp/content-shell-$VERSION.XXXXX)
 ARCHIVE=$SRC/out/content-shell-$VERSION.tar.bz2
 echo "TMPDIR:   $TMPDIR"
 echo "ARCHIVE:  $ARCHIVE"
