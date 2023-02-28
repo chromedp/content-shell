@@ -217,6 +217,8 @@ echo $VERSION > $PROJECT/.stamp
 mkdir -p $TMPDIR/content-shell
 cp -a $PROJECT/{content_shell,.stamp} $TMPDIR/content-shell
 cp -a $PROJECT/{libEGL.so,libGLESv2.so,libvk_swiftshader.so,libvulkan.so.1,vk_swiftshader_icd.json} $TMPDIR/content-shell
+cp -a $PROJECT/{content_shell.pak,shell_resources.pak,ui_resources_100_percent.pak,ui_test.pak} $TMPDIR/content-shell
+cp -a $PROJECT/{icudtl.dat,snapshot_blob.bin,v8_context_snapshot.bin} $TMPDIR/content-shell
 
 popd &> /dev/null
 
